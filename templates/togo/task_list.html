@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Todo List</h1>
+  <a href="{% url 'togo:task-create-view' %}" class="btn btn-primary mb-3">Add New Task</a>
+  <ul class="list-group">
+    {% for task in tasks %}
+      <li class="list-group-item d-flex justify-content-between align-items-center {% if task.is_done %}list-group-item-success{% endif %}">
+        <div>
+          <strong>{{ task.content }}</strong>
+          {% if task.is_completed %}
+              <span class="text-success d-inline">Done</span>
+          {% else %}
+              <span class="text-danger d-inline">Not done</span>
+          {% endif %}
+          <div>
+            <small>Create at: {{ task.created_at }}</small>
+            {% if task.deadline %}
+            <small>(Deadline: {{ task.deadline }})</small>
+          {% endif %}
+          </div>
+          <div>
+            {% for tag in task.tags.all %}
+              <span class="badge bg-secondary" >{{ tag.name }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div>
+          {% if task.is_completed %}
+            <a href="{% url 'togo:task-toggle-view' task.pk %}" class="btn btn-warning btn-sm">Undo</a>
+          {% else %}
+            <a href="{% url 'togo:task-toggle-view' task.pk %}" class="btn btn-success btn-sm">Complete</a>
+          {% endif %}
+          <a href="{% url 'togo:task-update-view' task.pk %}" class="btn btn-info btn-sm">Edit</a>
+          <a href="{% url 'togo:task-delete-view' task.pk %}" class="btn btn-danger btn-sm">Delete</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
