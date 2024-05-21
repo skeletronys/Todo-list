@@ -21,10 +21,10 @@ This project is a simple task list that allows users to create, view, update, an
 ## Photo pages
 
 1. Home pages is Task list
-![img.png](img.png)
+![img.png](READMEphoto/img.png)
 2. Task create
-![img_3.png](img_3.png)
+![img_3.png](READMEphoto/img_3.png)
 3. Tags page
-![img_1.png](img_1.png)
+![img_1.png](READMEphoto/img_1.png)
 4. Tags create
-![img_2.png](img_2.png)
+![img_2.png](READMEphoto/img_2.png)
