@@ -1,2 +1,6 @@
 .venv
 .idea
+**/migrations/
+**/migrations/*
+*.sqlite3
+*.db
