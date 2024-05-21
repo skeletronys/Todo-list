@@ -1,6 +1,6 @@
 from django import forms
 
-from togo_list.models import Tag
+from togo_list.models import Tag, Task
 
 
 class TagForm(forms.ModelForm):
@@ -8,3 +8,11 @@ class TagForm(forms.ModelForm):
         model = Tag
         fields = "__all__"
 
+
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ['content', 'deadline', 'tags']
+        widgets = {
+            'tags': forms.CheckboxSelectMultiple(),
+        }
