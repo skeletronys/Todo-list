@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <h1>
+    Tags list
+    <a href="" class="btn btn-primary link-to-page">
+      Create
+    </a>
+  </h1>
+  {% if tag_list %}
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </table>
+
+  {% else %}
+      <p>There are no tags in the service.</p>
+  {% endif %}
+{% endblock %}
