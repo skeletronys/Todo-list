@@ -16,3 +16,15 @@ This project is a simple task list that allows users to create, view, update, an
 2. Select "Add Task" to create a new task.
 3. Browse, update, or delete tasks using the respective links on the page.
 4. Mark tasks as done or undone by clicking the appropriate buttons.
+
+
+## Photo pages
+
+1. Home pages is Task list
+![img.png](img.png)
+2. Task create
+![img_3.png](img_3.png)
+3. Tags page
+![img_1.png](img_1.png)
+4. Tags create
+![img_2.png](img_2.png)
