@@ -4,7 +4,7 @@
 {% block content %}
   <h1>
     Tags list
-    <a href="" class="btn btn-primary link-to-page">
+    <a href="{% url 'togo:tag-create-view' %}" class="btn btn-primary link-to-page">
       Create
     </a>
   </h1>
@@ -13,9 +13,23 @@
       <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
       </tr>
+      {% for tag in tag_list %}
+        <tr>
+        	<th>{{ tag.id }}</th>
+          <th>{{ tag.name }}</th>
+          <th><a href="{% url 'togo:tag-update-view' pk=tag.id %}">Update</a></th>
+          <th>
+            <a href="{% url 'togo:tag-delete-view' pk=tag.id %}" style="color: red">
+              Delete
+            </a>
+          </th>
+        </tr>
+      {% endfor %}
     </table>
-
+    
   {% else %}
       <p>There are no tags in the service.</p>
   {% endif %}
